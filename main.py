@@ -7,6 +7,7 @@ to generate weather forecast summaries with emphasis on hazardous conditions.
 """
 
 import sys
+import os
 from pathlib import Path
 from mcp import StdioServerParameters
 from crewai import Agent, Task, Crew
@@ -44,7 +45,7 @@ def run_weather_forecast(latitude: float, longitude: float, location_name: str =
             args=[
                 "-y",
                 "@modelcontextprotocol/server-filesystem",
-                "/Users/rhawthorne/Downloads",
+                os.getcwd(),
             ]
         )
 
@@ -111,7 +112,7 @@ def run_weather_forecast(latitude: float, longitude: float, location_name: str =
                 - 1-2 paragraphs describing conditions with emphasis on any hazardous weather
                 - Specific timing and intensity details for significant weather events
                 - Practical implications for daily activities if hazardous conditions are present
-                - Save the forecast summary in the /Users/rhawthorne/Downloads folder with the filename: weather_forecast.md; give me the full path to the file after it is saved
+                - Save the forecast summary in this folder folder with the filename: weather_forecast.md; give me the full path to the file after it is saved
                 
                 Example format:
                 # Weather Forecast for [Location]
