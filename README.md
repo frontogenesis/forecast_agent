@@ -3,21 +3,19 @@
 Welcome to the Weather Forecast Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation
-
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-First, if you haven't already, install uv:
-
-```bash
-pip install uv
-```
+Ensure you have Python >=3.10 <3.13 installed on your system.
 
 Next, navigate to your project directory and install the dependencies:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+You can re-create the environment locally if you'd like using conda or mamba. There are some pip dependencies also.
 ```bash
-crewai install
+conda env create -f environment.yml
 ```
+or
+```bash
+mamba env create -f environment.yml
+```
+
 ### Customizing
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
@@ -43,7 +41,7 @@ The Crew is composed of multiple AI agents, each with unique roles, goals, and t
 
 ## Support
 
-For support, questions, or feedback regarding the NewsWriter Crew or crewAI.
+For support, questions, or feedback regarding the Crew or crewAI.
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
