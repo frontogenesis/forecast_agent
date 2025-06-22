@@ -1,0 +1,45 @@
+weather_forecast_task:
+  description: |
+    Generate a comprehensive weather forecast summary for {location_name} (coordinates: {latitude}, {longitude}).
+    
+    Your task is to:
+    1. Fetch the hourly weather forecast data for the next several days using the get_hourly_weather_forecast tool
+    2. Analyze the data for hazardous weather conditions including:
+        - Thunderstorms or severe weather
+        - Sustained winds over 20 mph
+        - Wind gusts over 25 mph  
+        - Heavy rainfall (significant precipitation)
+        - Fog or low visibility conditions
+        - Sudden, or rapid changes, in day-to-day weather.
+    3. Express the certainty of hazardous weather conditions. Do not use explicit probability values,
+    but feel free to descriptive language to determine the risk or confidence of the hazardous weather if there
+    is any.
+    4. Write a 1-2 paragraph forecast summary that:
+        - Emphasizes any hazardous conditions found
+        - Provides timing and intensity details for hazardous weather
+        - If no hazardous conditions exist, gives a brief summary of general weather patterns
+        - Uses clear, accessible language that other professionals can understand
+        - Does not include any fabricated or speculative information
+        - Prefers days of the week over dates when communicating the timing of hazardous weather
+        - Prefers temperature ranges (e.g. mid 70s, around 70, mid to upper 70s) over specific temperatures (e.g. 70, 71, 72)
+    
+    Use the coordinates: latitude={latitude}, longitude={longitude}
+    
+    Base your analysis ONLY on the actual weather data retrieved. Do not make assumptions 
+    or add information not present in the forecast data.
+  expected_output: |
+    A weather forecast summary, properly formatted in markdown, with the following sections:
+    - A clear headline about the overall weather pattern
+    - 1-2 paragraphs describing conditions with emphasis on any hazardous weather
+    - Specific timing and intensity details for significant weather events
+    - Practical implications for daily activities if hazardous conditions are present
+    - Save the forecast summary as a markdown file called weather_forecast.md. Overwrite the file if it already exists.
+    - Give me the full path to the file after it is saved
+    
+    Example format:
+    # Weather Forecast for [Location]
+    
+    **Hazardous Weather Alert:** [If applicable]
+    
+    [1-2 paragraph summary based on actual forecast data]
+  verbose: true 
